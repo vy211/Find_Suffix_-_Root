@@ -25,94 +25,105 @@ def find_root_suffix():
         suffix = ['s', 'es', 'ies', 'ves', 'a', 'e', 'ices', 'ces', 'i', 'm']
 
         for i in suffix:
+            if w.endswith(i):
 
-                if w.endswith(i):
-                        if i == 's':
-                                if w.endswith('es'):
-                                        if w.endswith("ies"):
-                                                l = w.split('ies')
-                                                l[0] = l[0] + 'y'
-                                                print("root: ", l[0])
-                                                entry_2.insert(0,l[0])
-                                                entry_3.insert(0, "ies")
-                                                print("suffix: ies")
+                if i == 's':
+                    if w.endswith('es'):
 
-                                                break
-                                        elif w.endswith("ves"):
-                                                l = w.split('ves')
-                                                l[0] = l[0] + 'f'
-                                                print("root: ", l[0])
-                                                entry_2.insert(0, l[0])
-                                                entry_3.insert(0, "ves")
-                                                print("suffix: ves")
-                                                break
+                        if w.endswith("ies"):
 
-                                        elif w.endswith("ces"):
-                                                if w.endswith("ices"):
-                                                        l = w.split('ices')
-                                                        l[0] = l[0] + 'ex'
-                                                        print("root: ", l[0])
-                                                        print("suffix: ices")
-                                                        entry_2.insert(0, l[0])
-                                                        entry_3.insert(0, "ices")
-                                                        break
-                                                else:
-                                                        l = w.split('ces')
-                                                        l[0] = l[0] + 'x'
-                                                        print("root: ", l[0])
-                                                        print("suffix: ces")
-                                                        entry_2.insert(0, l[0])
-                                                        entry_3.insert(0, "ces")
-                                                        break
-                                        else:
-                                                l = w.split('es')
-                                                print("root: ", l[0])
-                                                print("suffix: es")
-                                                entry_2.insert(0, l[0])
-                                                entry_3.insert(0, "es")
-                                                break
-                                else:
-                                        l = w.split('s')
-                                        print("root: ", l[0])
-                                        print("suffix: s")
-                                        entry_2.insert(0, l[0])
-                                        entry_3.insert(0, "s")
-                                        break
-                        elif w.endswith('a'):
+                            l = w.split('ies')
+                            l[0] = l[0] + 'y'
+                            print("root: ", l[0])
+                            entry_2.insert(0, l[0])
+                            entry_3.insert(0, "ies")
+                            print("suffix: ies")
 
-                                w = w[:-1]
-                                w = w + 'um'
-                                print("root: ", w)
-                                print("suffix: a")
-                                entry_2.insert(0, w)
-                                entry_3.insert(0, "a")
-                                break
-                        elif w.endswith('e'):
-                                w = w[:-1]
-                                print("root: ", w)
-                                print("suffix: e")
-                                entry_2.insert(0, w)
-                                entry_3.insert(0, "e")
-                                break
-                        elif w.endswith('i'):
-                                w = w[:-1]
-                                w = w + 'us'
-                                print("root: ", w)
-                                print("suffix: i")
-                                entry_2.insert(0, w)
-                                entry_3.insert(0, "i")
-                                break
-                        elif w.endswith('im'):
-                                l = w.split('im')
+                            break
+                        elif w.endswith("ves"):
+                            l = w.split('ves')
+                            l[0] = l[0] + 'f'
+                            print("root: ", l[0])
+                            entry_2.insert(0, l[0])
+                            entry_3.insert(0, "ves")
+                            print("suffix: ves")
+                            break
+
+                        elif w.endswith("ces"):
+                            if w.endswith("ices"):
+                                l = w.split('ices')
+                                l[0] = l[0] + 'ex'
                                 print("root: ", l[0])
-                                print("suffix: im")
+                                print("suffix: ices")
                                 entry_2.insert(0, l[0])
-                                entry_3.insert(0, "im")
+                                entry_3.insert(0, "ices")
                                 break
-                else:
-                        messagebox.showinfo("Sorry", "Answer Not Define")
-                        break
+                            else:
 
+                                l = w.split('ces')
+                                l[0] = l[0] + 'x'
+                                print("root: ", l[0])
+                                print("suffix: ces")
+                                entry_2.insert(0, l[0])
+                                entry_3.insert(0, "ces")
+                                break
+                        else:
+                            l = w.split('es')
+                            print("root: ", l[0])
+                            print("suffix: es")
+                            entry_2.insert(0, l[0])
+                            entry_3.insert(0, "es")
+                            break
+                    else:
+
+                        l = w.split('s')
+                        print("root: ", l[0])
+                        print("suffix: s")
+                        entry_2.insert(0, l[0])
+                        entry_3.insert(0, "s")
+                        break
+                elif w.endswith('a'):
+
+                    w = w[:-1]
+                    w = w + 'um'
+                    print("root: ", w)
+                    print("suffix: a")
+                    entry_2.insert(0, w)
+                    entry_3.insert(0, "a")
+                    break
+
+
+
+
+                elif w.endswith('e'):
+
+                    w = w[:-1]
+                    print("root: ", w)
+                    print("suffix: e")
+                    entry_2.insert(0, w)
+                    entry_3.insert(0, "e")
+                    break
+
+
+                elif w.endswith('i'):
+                    w = w[:-1]
+                    w = w + 'us'
+                    print("root: ", w)
+                    print("suffix: i")
+                    entry_2.insert(0, w)
+                    entry_3.insert(0, "i")
+                    break
+                elif w.endswith('im'):
+                    l = w.split('im')
+                    print("root: ", l[0])
+                    print("suffix: im")
+                    entry_2.insert(0, l[0])
+                    entry_3.insert(0, "im")
+                    break
+                else:
+
+                    messagebox.showinfo("Sorry", "Answer Not Define")
+                    break
 
 def clear():
         entry_1.delete(0,END)
