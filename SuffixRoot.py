@@ -23,6 +23,7 @@ entry_3.place(x=190,y=150)
 def find_root_suffix():
         w=entry_1.get()
         suffix = ['s', 'es', 'ies', 'ves', 'a', 'e', 'ices', 'ces', 'i', 'm']
+
         for i in suffix:
 
                 if w.endswith(i):
@@ -108,7 +109,7 @@ def find_root_suffix():
                                 entry_2.insert(0, l[0])
                                 entry_3.insert(0, "im")
                                 break
-                        else:
+                elif w.endswith not in suffix:
                                 messagebox.showinfo("Sorry", "Answer Not Define")
 
 
