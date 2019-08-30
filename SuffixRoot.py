@@ -109,8 +109,9 @@ def find_root_suffix():
                                 entry_2.insert(0, l[0])
                                 entry_3.insert(0, "im")
                                 break
-                elif w.endswith not in suffix:
-                                messagebox.showinfo("Sorry", "Answer Not Define")
+                else:
+                        messagebox.showinfo("Sorry", "Answer Not Define")
+                        break
 
 
 def clear():
