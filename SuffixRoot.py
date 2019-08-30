@@ -83,14 +83,14 @@ def find_root_suffix():
                                 w = w + 'um'
                                 print("root: ", w)
                                 print("suffix: a")
-                                entry_2.insert(0, l[0])
+                                entry_2.insert(0, w)
                                 entry_3.insert(0, "a")
                                 break
                         elif w.endswith('e'):
                                 w = w[:-1]
                                 print("root: ", w)
                                 print("suffix: e")
-                                entry_2.insert(0, l[0])
+                                entry_2.insert(0, w)
                                 entry_3.insert(0, "e")
                                 break
                         elif w.endswith('i'):
@@ -98,7 +98,7 @@ def find_root_suffix():
                                 w = w + 'us'
                                 print("root: ", w)
                                 print("suffix: i")
-                                entry_2.insert(0, l[0])
+                                entry_2.insert(0, w)
                                 entry_3.insert(0, "i")
                                 break
                         elif w.endswith('im'):
@@ -113,9 +113,9 @@ def find_root_suffix():
 
 
 def clear():
-        entry_1.select_clear()
-        entry_2.select_clear()
-        entry_3.select_clear()
+        entry_1.delete(0,END)
+        entry_2.delete(0,END)
+        entry_3.delete(0,END)
 
 Button(root, text='Find',width=20,bg='brown',fg='white',command=find_root_suffix).place(x=50,y=200)
 Button(root, text='Clear',width=20,bg='brown',fg='white',command=clear).place(x=300,y=200)
